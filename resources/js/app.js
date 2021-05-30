@@ -4,10 +4,13 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+// require('./bootstrap');
 
 window.Vue = require('vue').default;
-import HeaderComponent from "./components/HeaderComponent";
+import App from './App.vue';
+import router from './starterRouter';
+// import router from './router';
+import NowUiKit from './plugins/now-ui-kit';
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,8 +23,9 @@ import HeaderComponent from "./components/HeaderComponent";
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-Vue.component('header-component', HeaderComponent);
+// Vue.component('app', App);
+Vue.config.productionTip = true;
+Vue.use(NowUiKit);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -29,6 +33,7 @@ Vue.component('header-component', HeaderComponent);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+new Vue({
+    router,
+    render: h => h(App)
+}).$mount('#app');
