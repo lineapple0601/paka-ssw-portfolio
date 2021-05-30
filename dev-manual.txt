@@ -1,0 +1,19 @@
+参考資料：https://qiita.com/minato-naka/items/2d2def4d66ec88dc3ca2
+# Laravelプロジェクトの作成
+composer create-project --prefer-dist laravel/laravel vue-laravel-spa
+# フロントエンド構築に必要なベースライブラリ（laravel/ui）をインストール
+composer require laravel/ui
+# laravel/uiからVueをインストール
+php artisan ui vue
+# VueのパッケージをNPMでインストール
+npm install
+# SPAでRouteを担当する vue-routerをインストール
+npm install --save vue-router
+# フロントエンドをビルドする（VueコードをJavascriptに）
+npm run dev
+# 開発中にはこのコマンドを使ってリアルタイムで更新できるようにする
+npm run watch
+
+【bootstrap-vue】
+使用テンプレート：https://www.creative-tim.com/product/vue-now-ui-kit?_ga=2.101800643.37974181.1622361040-2032159799.1622361040#
+マニュアル：https://demos.creative-tim.com/vue-now-ui-kit/documentation/?_ga=2.101800643.37974181.1622361040-2032159799.1622361040
